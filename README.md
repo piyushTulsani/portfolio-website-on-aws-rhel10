@@ -1,48 +1,48 @@
-🌐 Live Demo
+🚀 AWS EC2 Web Server Deployment (RHEL 10 + Apache)
 
-👉 http://<YOUR-EC2-PUBLIC-IP>
 
-⚠️ Replace <YOUR-EC2-PUBLIC-IP> with your actual instance IP
 
-📌 Project Overview
 
-This project demonstrates real-world cloud deployment of a static portfolio website on an AWS EC2 instance running RHEL 10, hosted using Apache HTTP Server.
 
-It covers full lifecycle:
 
-Cloud infrastructure setup
-Linux server configuration
-Web server deployment
-Security configuration
-🏗️ Architecture
-☁️ AWS EC2 (RHEL 10)
-🌐 Apache HTTP Server (httpd)
-🔐 AWS Security Groups (HTTP + SSH)
-💻 Static Frontend (HTML5)
+
+
+📌 Project Summary
+
+A production-style deployment of a static portfolio website on AWS EC2 (RHEL 10) using Apache HTTP Server.
+This project demonstrates cloud hosting, Linux server configuration, and basic DevOps workflow.
+
+🌐 Live Deployment
+
+👉 http://<EC2-PUBLIC-IP>
+
+Replace <EC2-PUBLIC-IP> with your actual instance IP
+
+🧱 System Architecture
+User → AWS EC2 Instance → Apache Web Server → index.html (Website)
 ⚙️ Tech Stack
-AWS EC2
-Red Hat Enterprise Linux 10
-Apache Web Server
-HTML5 / CSS3
-SSH (Key-based authentication)
+☁️ AWS EC2
+🐧 Red Hat Enterprise Linux 10
+🌐 Apache HTTP Server (httpd)
+💻 HTML5
+🔐 SSH (Key-based login)
 📂 Project Structure
 portfolio-website-on-aws-rhel10/
 │
 ├── index.html
 ├── README.md
-│
 └── screenshots/
     ├── ec2-instance.png
     ├── security-group.png
     └── homepage.png
 🚀 Deployment Workflow
 1️⃣ Launch EC2 Instance
-AMI: RHEL 10
-Instance Type: t2.micro (Free Tier)
-Key Pair generated for SSH access
-2️⃣ Connect via SSH
-ssh -i "key.pem" ec2-user@<EC2-PUBLIC-IP>
-3️⃣ Install Apache Server
+OS: RHEL 10
+Type: t2.micro (Free Tier)
+Key pair generated for SSH access
+2️⃣ SSH Into Instance
+ssh -i key.pem ec2-user@<public-ip>
+3️⃣ Install Apache
 sudo dnf update -y
 sudo dnf install httpd -y
 sudo systemctl start httpd
@@ -55,46 +55,40 @@ Paste your HTML code and save.
 
 5️⃣ Configure Security Group
 
-Allow inbound rules:
+Inbound Rules:
 
-HTTP → Port 80
-SSH → Port 22
-🌍 Access Website
-
-Once deployed:
-
+HTTP (80) → Open to public
+SSH (22) → Your IP only
+🌍 Website Access
 http://<EC2-PUBLIC-IP>
 📸 Screenshots
 🖥️ EC2 Instance
 
-🔐 Security Group Configuration
+🔐 Security Group
 
-🌐 Website Homepage
+🌐 Website Output
 
-📊 Key Learnings
+🎯 Key Learnings
 AWS EC2 provisioning & management
-Linux server administration (RHEL 10)
-Apache HTTP server configuration
-Cloud networking (Security Groups)
-Real-world deployment pipeline
-🚀 Future Improvements
-🔒 Add HTTPS using SSL (Let’s Encrypt)
-🌐 Attach custom domain (Route 53)
+Linux server administration (RHEL)
+Apache web server configuration
+Security group & network rules
+Real-world deployment workflow
+🚀 Future Enhancements
+🔒 HTTPS using SSL (Let’s Encrypt)
+🌐 Custom domain via Route 53
 ⚡ CI/CD pipeline using GitHub Actions
-🐳 Docker-based deployment
-⚖️ Load Balancer integration
+🐳 Docker container deployment
+⚖️ Load balancer integration
 🏆 Project Highlights
-Production-style cloud deployment flow
-Real server hosting (not local simulation)
-Fully manual Linux + AWS configuration
-Beginner → Intermediate DevOps foundation
+Real cloud deployment (not local simulation)
+End-to-end server setup from scratch
+Linux + AWS integration
+Beginner → DevOps foundation project
 👨‍💻 Author
 
-Built as a hands-on cloud deployment project to strengthen:
+Built as a hands-on cloud & Linux deployment project to strengthen AWS fundamentals and real-world system understanding.
 
-AWS fundamentals
-Linux system administration
-Web hosting workflows
-⭐ If you like this project
+⭐ Note
 
-Give it a ⭐ on GitHub and feel free to fork it!
+This project is part of my cloud learning journey and demonstrates practical AWS EC2 hosting.
